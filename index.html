@@ -1,0 +1,177 @@
+<!DOCTYPE -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.5.min.css">
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready (function (){
+				//alert("jquery funcionando..........");
+				$("#btnSumar").click(function(){
+					var n1=parseInt($("#num1").val());
+					var n2=parseInt($("#num2").val());
+					var suma=n1+n2;
+					$("#res").val(suma);
+					//alert("valor de la suma es: "+suma);
+				});
+				$("#btnResta").click(function(){
+					var n1=parseInt($("#num1").val());
+					var n2=parseInt($("#num2").val());
+					var resta=n1-n2;
+					$("#res").val(resta);
+				});
+
+				$("#btnMultiplicar").click(function(){
+					var n1=parseInt($("#num1").val());
+					var n2=parseInt($("#num2").val());
+					var Mult=n1*n2;
+					$("#res").val(Mult);
+				});
+
+				$("#btnDividir").click(function(){
+					var n1=parseInt($("#num1").val());
+					var n2=parseInt($("#num2").val());
+					var Div=n1/n2;
+					$("#res").val(Div);
+				});
+
+				$("#btnFactorial").click(function(){
+					
+					var n1=parseInt($("#fact").val());
+					{
+					
+						var n=1;
+
+						for (var i = 1; i <=n1; i++) {
+							n=n*i;
+						}
+
+					$("#resul").val(n);
+					}
+				
+
+				   
+
+				});
+			});
+	</script>
+	<style type="text/css">
+		p{
+			text-align: center;
+		}
+		#Principal{
+			background-color: pink; 
+		}
+		#Contacto{
+			background-color:#E79AEB; /*lila*/ 
+		}
+		#Factorial{
+			background-color: #FFFF87; /*#FFC400;*/ 
+		}
+		.colorRojo{
+			color:#4B2705;
+			font-size: 30px;
+		}
+		.colorSalmon{
+			color: #FA8072;
+		}
+		.fondo{
+			background-color: #FFA07A;
+		}
+	</style>
+</head>
+<body>
+	<div data-role="page" id="Principal" data-theme="a"> <!--Primera Interfaz-->
+		<div data-role="header">
+			<a href="#" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+			<p class="colorRojo">Examen Mos</p>
+			<a href="#Contacto" class="ui-btn ui-icon-search ui-btn-icon-bottom">Desarrolador</a>
+		</div>
+		<div data-role="content">
+			<a href="#OperacionesBasicas" data-role="button" data-transition="slide">Operaciones Basicas</a>
+			
+			<a href="#Contacto" data-role="button" data-transition="turn">Datos del Desarrollador </a>
+			<a href="#Factorial" data-role="button" data-transition="flip"> Factorial</a>
+		</div>
+		<div data-role="footer">
+			<p>" El dinero hace hombres ricos, el conocimiento hace hombres sabios, la humildad hace grandes hombres" </p>
+			<p>MOS</p>
+		</div>
+	</div>
+	
+	<div data-role="page" id="OperacionesBasicas" data-theme="a" class="fondo"> <!--Segunda interfaz-->
+		
+		<div data-role="header">
+			<div data-role="navbar">
+
+				<ul>
+					<li><a href="#Principal" class="ui-btn ui-icon-home ui-btn-icon-top">Home</a></li>
+					<p class="colorRojo">Operaciones Basicas</p>
+					<li><a href="#Contacto" class="ui-btn ui-icon-search ui-btn-icon-top">Desarrollador</a></li>
+					
+				</ul>
+			
+			</div>
+		</div>
+		<div data-role="content">
+			<input type="text" id="num1" placeholder="Escribe un número">
+			<input type="text" id="num2" placeholder="Escribe un número">
+			<input type="text" id="res" placeholder="Resultado">
+			<input type="button" id="btnSumar" value="Calcular suma">
+			<input type="button" id="btnResta" value="Calcular resta">
+			<input type="button" id="btnMultiplicar" value="Calcular multiplicación">
+			<input type="button" id="btnDividir" value="Calcular división">
+		</div>
+		<div data-role="footer">
+			<p>MOS</p>
+		</div>
+	</div>
+	<div data-role="page" id="Contacto" data-theme="a"> <!--Tercera interfaz-->
+		<div data-role="header">
+			<a href="#Principal" class="ui-btn ui-icon-home ui-btn-icon-top">Home</a>
+			<p class="colorRojo">Desarrollador</p>
+		</div>
+		<div data-role="content">
+			<p>Martina Ortega Sánchez</p>
+			<p>No.Control 13940071*</p>
+			<p>Tel: 276-431-691</p>
+			<p>ani-tramOS@hotmail.com</p>
+			<p>Bases de Datos Moviles</p>
+		</div>
+		<div data-role="footer">
+		<ul>
+			<li><a href="#Factorial" class="ui-btn ui-icon-plus ui-btn-icon-left">Factorial</a></li>
+			<li><a href="#OperacionesBasicas" class="ui-btn ui-icon-plus ui-btn-icon-left">Operaciones</a></li>
+			<p>MOS</p>
+			<!-- <p>Pie de la app</p> -->
+			</ul>
+		</div>
+	</div>
+
+<div data-role="page" id="Factorial" data-theme="a" class="colorSalmon"> <!--Cuarta interfaz-->
+		
+		<div data-role="header">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Principal" class="ui-btn ui-icon-home ui-btn-icon-top">Home</a></li>
+					<p class="colorRojo">Factorial</p>
+					<li><a href="#Contacto" class="ui-btn ui-icon-search ui-btn-icon-top">Desarrollador</a></li>
+					
+				</ul>
+			</div>
+		</div>
+		<div data-role="content">
+			<input type="text" id="fact" placeholder="Escribe un número">
+			<input type="text" id="resul" placeholder="Resultado">
+			<input type="button" id="btnFactorial" value="Calcular Factorial">
+		</div>
+		<div data-role="footer">
+			<a href="#OperacionesBasicas" class="ui-btn ui-icon-plus ui-btn-icon-top">Operaciones Basicas</a>
+			<p>MOS</p>
+		</div>
+	</div>	
+</body>
+</html>
